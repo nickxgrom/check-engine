@@ -4,7 +4,7 @@ const MessageHandler = require("./services/MessageHandler"),
 
 router.post('/', catchError(async (req, res, next) => {
     await MessageHandler.handleMessage(req.body)
-    res.status(200)
+    res.sendStatus(200)
 }))
 
 module.exports = router
