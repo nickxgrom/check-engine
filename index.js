@@ -1,10 +1,11 @@
+require('dotenv').config()
+
 const app = require('express')(),
     bodyParser = require('body-parser'),
     router = require('./src/controller'),
     CommandError = require("./src/core/CommandError"),
     db = require('./src/utils/db')
 
-require('dotenv').config()
 
 app.use(bodyParser.json())
 app.use(router)

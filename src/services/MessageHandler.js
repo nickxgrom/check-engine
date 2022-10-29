@@ -17,7 +17,7 @@ module.exports = {
     handleMessage: async body => {
         const messageInfo = getMainInfo(body)
         if (messageInfo && messageInfo.text.startsWith('/')) {
-            const commandResult = await execute(messageInfo.text, messageInfo.date)
+            const commandResult = await execute(messageInfo.senderId, messageInfo.text)
             await api.sendMessage(commandResult, messageInfo.chatId)
         }
     }
