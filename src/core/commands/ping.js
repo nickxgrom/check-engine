@@ -3,7 +3,7 @@ module.exports = {
     description: '',
     aliases: [],
     arguments: [],
-    execute: function (args, date) {
+    execute: function (args) {
         return `Pong`
     }
 }
