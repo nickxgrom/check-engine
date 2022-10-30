@@ -2,6 +2,12 @@ const CarModel = require('../models/Car')
 const ServiceError = require("../utils/ServiceError")
 
 module.exports = {
+    getCarList: async (ownerId) => {
+        const cars = await CarModel.findAll({
+          where: { ownerId }
+        })
+        return cars.map(car => ({ name: car.name, isDefault: car.isDefault }))
+    },
     addCar: async (ownerId, name, isDefault) => {
         const car = await CarModel.findOne({
             where: { ownerId, name }

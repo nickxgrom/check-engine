@@ -1,7 +1,9 @@
 const ping = require('./ping'),
-    AddCar = require('./AddCar')
+    AddCar = require('./AddCar'),
+    CarList = require('./CarList')
 
 module.exports = {
     ping,
     AddCar,
+    CarList,
 }
