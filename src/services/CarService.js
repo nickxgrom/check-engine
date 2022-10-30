@@ -62,6 +62,15 @@ module.exports = {
         car.save()
     } ,
     deleteCar: async (ownerId, name) => {
+        // TODO: make setDefault to another car if this was default
+        const car = await CarModel.findOne({
+            where: { ownerId, name }
+        })
+
+        if (!car) {
+            throw new ServiceError(404, `Car '${name}' doesn't exist`)
+        }
+
         await CarModel.destroy({
             where: { ownerId, name }
         })
