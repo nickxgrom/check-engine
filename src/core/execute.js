@@ -39,5 +39,5 @@ module.exports = async function (senderId, message) {
         }
     })
 
-    return command.execute(options)
+    return (await command.execute(options))
 }

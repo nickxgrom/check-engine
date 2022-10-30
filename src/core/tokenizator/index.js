@@ -4,7 +4,7 @@ function getCommand(message) {
 
     return {
         token,
-        arguments: tokens.length ? tokens : null
+        arguments: tokens.length ? tokens : []
     }
 }
 
