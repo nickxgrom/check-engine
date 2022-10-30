@@ -23,14 +23,23 @@ module.exports = {
             isDefault
         })
     },
-    updateCar: async (ownerId, name, newName) => {
+    updateCarName: async (ownerId, name, newName) => {
         const car = await CarModel.findOne({
             where: { ownerId, name }
         })
 
         if (!car) {
-            // TODO: throw an exception
+            throw new ServiceError(404, `Car '${name}' doesn't exist`)
         }
+
+        const checkExist = await CarModel.findOne({
+            where: { ownerId, name: newName }
+        })
+
+        if (checkExist) {
+            throw new ServiceError(409, `Car '${newName}' already exists`)
+        }
+
         car.name = newName
         car.save()
     },
