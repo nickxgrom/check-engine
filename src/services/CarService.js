@@ -34,6 +34,24 @@ module.exports = {
         car.name = newName
         car.save()
     },
+    setDefault: async (ownerId, name) => {
+        const car = await CarModel.findOne({
+            where: { ownerId, name }
+        })
+
+        if (!car) {
+            throw new ServiceError(404, `Car '${name}' doesn't exist`)
+        }
+
+        const cars = await CarModel.findAll({ where: { ownerId } })
+        cars.forEach(item => {
+            item.isDefault = false
+            item.save()
+        })
+
+        car.isDefault = true
+        car.save()
+    } ,
     deleteCar: async (ownerId, name) => {
         await CarModel.destroy({
             where: { ownerId, name }
