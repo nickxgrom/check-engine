@@ -1,8 +1,16 @@
 const CarModel = require('../models/Car')
+const ServiceError = require("../utils/ServiceError")
 
 module.exports = {
     addCar: async (ownerId, name, isDefault) => {
-        // TODO: check by name, if owner has no car with same name
+        const car = await CarModel.findOne({
+            where: { ownerId, name }
+        })
+
+        if (car) {
+            throw new ServiceError(409, `Car '${name}' already exists`)
+        }
+
         await CarModel.create({
             ownerId,
             name,
