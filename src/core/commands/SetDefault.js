@@ -18,6 +18,6 @@ module.exports = {
         const { ownerId, name} = options
         await CarService.setDefault(ownerId, name)
 
-        return `Car ${name} was set as default`
+        return `Car '${name}' was set as default`
     }
 }
