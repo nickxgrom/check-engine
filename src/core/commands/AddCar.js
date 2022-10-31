@@ -2,7 +2,7 @@ const CarService = require('../../services/CarService')
 
 module.exports = {
     syntax: 'add-car',
-    description: '',
+    description: 'creating car',
     aliases: [],
     arguments: {
         ownerId: {

@@ -2,7 +2,7 @@ const CarService = require('../../services/CarService')
 
 module.exports = {
     syntax: 'update-name',
-    description: '',
+    description: 'updating car name',
     aliases: [],
     arguments: {
         ownerId: {

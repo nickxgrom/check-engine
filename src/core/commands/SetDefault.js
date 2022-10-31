@@ -2,7 +2,7 @@ const CarService = require('../../services/CarService')
 
 module.exports = {
     syntax: 'set-default',
-    description: '',
+    description: 'make car as default',
     aliases: [],
     arguments: {
         ownerId: {

@@ -8,7 +8,7 @@ module.exports = async function (senderId, message) {
     const command = Object.values(commands).find(command => command.syntax === token)
 
     if (!command) {
-        throw new CommandError(404, 'Unknown command')
+        throw new CommandError(404, `Unknown command /${token}`)
     }
 
     const options = {},

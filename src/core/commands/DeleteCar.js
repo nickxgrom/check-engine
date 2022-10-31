@@ -2,7 +2,7 @@ const CarService = require('../../services/CarService')
 
 module.exports = {
     syntax: 'delete-car',
-    description: '',
+    description: 'deleting car by name',
     aliases: [],
     arguments: {
         ownerId: {
