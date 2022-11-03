@@ -37,6 +37,6 @@ module.exports = {
     execute: async (options) => {
         const { consumption, volume, mileage } = await TransactionService.addTransaction(options)
 
-        return `You drove *${mileage}km* with *${volume} liters* of fuel:\nConsumption per 100km: *${consumption} liters*`
+        return `Record added\nYou drove *${mileage}km* with *${volume} liters* of fuel:\nConsumption per 100km: *${consumption} liters*`
     }
 }
