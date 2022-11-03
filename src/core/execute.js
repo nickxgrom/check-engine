@@ -31,6 +31,10 @@ module.exports = async function (senderId, message) {
                 throw new CommandError(400, `Argument '${key}' must have value`)
             } else if (commandArgs[key].type === Number) {
                 options[key] = +options[key]
+                if (isNaN(options[key])) {
+                    throw new CommandError(400, `Argument '${key}' must be Number`)
+                }
+
             }
         } else if (commandArgs[key].required && !options[key]) {
             throw new CommandError(400, `Argument '${key}' is required`)
