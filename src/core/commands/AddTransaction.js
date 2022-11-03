@@ -2,7 +2,7 @@ const TransactionService = require("../../services/TransactionService");
 
 module.exports = {
     syntax: 'add-transaction',
-    description: 'creating car',
+    description: 'add a fuel consumption record',
     aliases: [],
     arguments: {
         ownerId: {
