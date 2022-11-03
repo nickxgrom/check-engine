@@ -9,7 +9,7 @@ module.exports = {
         if (total && cost) {
             volume = (total / cost).toFixed(2)
         } else if (!volume) {
-            throw new ServiceError(400, 'Total and cost or value required arguments')
+            throw new ServiceError(400, 'Total and cost or volume required arguments')
         }
 
         let car = name ? await CarModel.findOne({ where: { ownerId, name } }) : await CarModel.findOne({ where: { ownerId, isDefault: true } })
