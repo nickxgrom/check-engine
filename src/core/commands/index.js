@@ -4,7 +4,8 @@ const ping = require('./ping'),
     CarList = require('./CarList'),
     SetDefault = require('./SetDefault'),
     UpdateName = require('./UpdateName'),
-    DeleteCar = require('./DeleteCar')
+    DeleteCar = require('./DeleteCar'),
+    AddTransaction = require('./AddTransaction')
 
 module.exports = {
     ping,
@@ -14,4 +15,5 @@ module.exports = {
     UpdateName,
     DeleteCar,
     help,
+    AddTransaction,
 }
